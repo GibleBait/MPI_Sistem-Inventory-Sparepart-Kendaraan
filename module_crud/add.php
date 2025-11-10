@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     $sql = "INSERT INTO barang (kode_barang, nama_barang, kategori, stok, satuan, harga_beli, harga_jual, lokasi_rak)
             VALUES ('$kode','$nama','$kategori','$stok','$satuan','$hb','$hj','$lokasi')";
     if (mysqli_query($conn, $sql)) {
-        header("Location: index.php");
+        header("Location: ../index.php");
         exit;
     } else {
         echo "Error: " . mysqli_error($conn);
@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
     <button type="submit" name="submit">Simpan</button>
   </form>
   <br>
-  <a href="index.php" class="btn">Kembali</a>
+  <a href="../index.php" class="btn">Kembali</a>
 </div>
 </body>
 </html>

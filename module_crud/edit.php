@@ -25,7 +25,7 @@ if (isset($_POST['update'])) {
             lokasi_rak='$lokasi'
             WHERE id_barang='$id'";
     if (mysqli_query($conn, $sql)) {
-        header("Location: index.php");
+        header("Location: ../index.php");
         exit;
     } else {
         echo "Error: " . mysqli_error($conn);
@@ -54,7 +54,7 @@ if (isset($_POST['update'])) {
     <button type="submit" name="update">Update</button>
   </form>
   <br>
-  <a href="index.php" class="btn">Kembali</a>
+  <a href="../index.php" class="btn">Kembali</a>
 </div>
 </body>
 </html>

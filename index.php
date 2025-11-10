@@ -1,5 +1,5 @@
 <?php
-include '../config/config.php';
+include 'config/config.php';
 $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY id_barang DESC");
 ?>
 <!DOCTYPE html>
@@ -7,12 +7,12 @@ $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY id_barang DESC");
 <head>
   <meta charset="UTF-8">
   <title>Data Barang</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
   <h1>Data Barang</h1>
-  <a href="add.php" class="btn">+ Tambah Barang</a>
+  <a href="module_crud/add.php" class="btn">+ Tambah Barang</a>
   <table>
     <tr>
       <th>Kode Barang</th>
@@ -36,8 +36,8 @@ $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY id_barang DESC");
       <td><?= number_format($row['harga_jual'],0,',','.') ?></td>
       <td><?= htmlspecialchars($row['lokasi_rak']) ?></td>
       <td>
-        <a href="edit.php?id=<?= $row['id_barang'] ?>" class="btn btn-warning">Edit</a>
-        <a href="delete.php?id=<?= $row['id_barang'] ?>" class="btn btn-danger" onclick="return confirm('Yakin hapus data ini?')">Hapus</a>
+        <a href="module_crud/edit.php?id=<?= $row['id_barang'] ?>" class="btn btn-warning">Edit</a>
+        <a href="module_crud/delete.php?id=<?= $row['id_barang'] ?>" class="btn btn-danger" onclick="return confirm('Yakin hapus data ini?')">Hapus</a>
       </td>
     </tr>
     <?php endwhile; ?>
